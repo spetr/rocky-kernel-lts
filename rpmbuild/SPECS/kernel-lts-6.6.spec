@@ -1,5 +1,8 @@
 # All global changes to build and install should follow this line.
 
+# Define the version of the Linux Kernel Archive tarball.
+%global LKAver 6.6.17
+
 # Disable LTO in userspace packages.
 %global _lto_cflags %{nil}
 
@@ -22,9 +25,6 @@
 # this one might need tweaking (e.g. if default changes to w3.xzdio,
 # change below to w4T.xzdio):
 %global _binary_payload w3T.xzdio
-
-# Define the version of the Linux Kernel Archive tarball.
-%global LKAver 6.6.9
 
 # Define the buildid, if required.
 #global buildid .local
