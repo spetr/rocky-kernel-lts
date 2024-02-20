@@ -7,7 +7,7 @@ RUN dnf install -y epel-release
 RUN dnf upgrade -y
 
 # Install build dependencies
-RUN dnf install -y rpm-build rpmdevtools
+RUN dnf install -y rpm-build rpmdevtools wget
 RUN dnf install -y \
     asciidoc \
     audit-libs-devel \
