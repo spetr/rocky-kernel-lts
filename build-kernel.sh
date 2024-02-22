@@ -1,3 +1,8 @@
 #!/bin/sh
 
-docker run --platform=linux/amd64 -it --rm -v $PWD/rpmbuild:/root/rpmbuild rocky-kernel-lts
+docker run \
+    --platform=linux/amd64 -it --rm \
+    -v $PWD/rpmbuild:/root/rpmbuild \
+    -e KERNEL_VERSION=6.6.17 \
+    -e ZFS_VERSION=2.2.2 \
+    rocky-kernel-lts

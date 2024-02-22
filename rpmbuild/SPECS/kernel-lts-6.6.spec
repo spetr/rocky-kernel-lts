@@ -494,6 +494,7 @@ The meta-package for the %{1} %{name}.\
 %define kernel_ml_variant_package(n:m) \
 %package %{?1:%{1}-}core\
 Summary: %{variant_summary}.\
+Provides: kernel-uname-r = %{KVERREL}%{?1:+%{1}}\
 Provides: %{name}-%{?1:%{1}-}core-uname-r = %{KVERREL}%{?1:+%{1}}\
 Provides: installonlypkg(kernel)\
 Provides: installonlypkg(kernel-lts)\
