@@ -1,13 +1,13 @@
 FROM --platform=linux/amd64 rockylinux:9
 
 # Install build environment
-RUN dnf install -y dnf-plugins-core
-RUN dnf config-manager --set-enabled crb
-RUN dnf install -y epel-release
+RUN dnf install -y dnf-plugins-core epel-release
+RUN dnf config-manager --set-enabled crb epel
 RUN dnf upgrade -y
 
 # Install build dependencies
 RUN dnf install -y rpm-build rpmdevtools wget
+# Kernel dependencies
 RUN dnf install -y \
     asciidoc \
     audit-libs-devel \
@@ -45,6 +45,13 @@ RUN dnf install -y \
     python3-docutils \
     rsync \
     xmlto
+# ZFS dependencies
+RUN dnf install -y
+     libtirpc-devel \
+     libaio-devel \
+     libattr-devel \
+     libudev-devel \
+     python3-cff
 
 COPY --chmod=755 entrypoint.sh /
 
