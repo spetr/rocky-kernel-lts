@@ -46,12 +46,12 @@ RUN dnf install -y \
     rsync \
     xmlto
 # ZFS dependencies
-RUN dnf install -y
+RUN dnf install -y \
      libtirpc-devel \
      libaio-devel \
      libattr-devel \
      libudev-devel \
-     python3-cff
+     python3-cffi
 
 COPY --chmod=755 entrypoint.sh /
 
