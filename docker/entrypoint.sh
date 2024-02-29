@@ -17,7 +17,7 @@ fi
 
 # Download ZFS sources
 if [ ! -f /root/rpmbuild/SOURCES/zfs-${ZFS_VERSION}.tar.gz ]; then
-    wget https://github.com/openzfs/zfs/releases/download/zfs-2.2.2/zfs-2.2.2.tar.gz -O /root/rpmbuild/SOURCES/zfs-${ZFS_VERSION}.tar.gz
+    wget https://github.com/openzfs/zfs/releases/download/zfs-${ZFS_VERSION}/zfs-${ZFS_VERSION}.tar.gz -O /root/rpmbuild/SOURCES/zfs-${ZFS_VERSION}.tar.gz
 fi
 
 # Build kernel
@@ -31,7 +31,7 @@ tar -xf /root/rpmbuild/SOURCES/zfs-${ZFS_VERSION}.tar.gz -C /tmp
 cd /tmp/zfs-${ZFS_VERSION}
 ./configure
 make srpm-utils srpm-kmod
-rpm -i zfs-2.2.2-1.el9.src.rpm zfs-kmod-2.2.2-1.el9.src.rpm
+rpm -i zfs-${ZFS_VERSION}-1.el9.src.rpm zfs-kmod-${ZFS_VERSION}-1.el9.src.rpm
 
 cd /root
 rpmbuild -ba /root/rpmbuild/SPECS/zfs.spec

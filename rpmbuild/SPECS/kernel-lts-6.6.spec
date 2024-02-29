@@ -1,7 +1,7 @@
 # All global changes to build and install should follow this line.
 
 # Define the version of the Linux Kernel Archive tarball.
-%global LKAver 6.6.17
+%global LKAver 6.6.18
 
 # Disable LTO in userspace packages.
 %global _lto_cflags %{nil}
