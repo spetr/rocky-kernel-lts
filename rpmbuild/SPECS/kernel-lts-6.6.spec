@@ -1,7 +1,7 @@
 # All global changes to build and install should follow this line.
 
 # Define the version of the Linux Kernel Archive tarball.
-%global LKAver 6.6.18
+%global LKAver 6.6.21
 
 # Disable LTO in userspace packages.
 %global _lto_cflags %{nil}
@@ -1492,6 +1492,14 @@ fi
 %kernel_ml_variant_files %{_use_vdso} %{with_std}
 
 %changelog
+* Tue Mar 12 2024 Stanislav Petr <petr@apptocloud.com> - 6.6.21-1
+- Updated with the 6.6.21 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.6.21]
+
+* Fri Mar 01 2024 Stanislav Petr <petr@apptocloud.com> - 6.6.19-1
+- Updated with the 6.6.9 source tarball.
+- [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.6.19]
+
 * Mon Jan 01 2024 Akemi Yagi <toracat@elrepo.org> - 6.6.9-1
 - Updated with the 6.6.9 source tarball.
 - [https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.6.9]
